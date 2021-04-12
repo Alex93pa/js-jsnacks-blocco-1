@@ -23,9 +23,18 @@ var numero;
 var somma=0;
 
 for(var i=0; i <10; i++){
-    myArray[i] = parseInt(prompt("inserisci il " + (i+1) + " numero. Ne mancano " + (10 - i)));
-    somma = somma + myArray[i];
+    myArray[i] = parseInt(prompt("inserisci il " + (i + 1) + " numero. Ne mancano " + (9 - i)));
+
+    if (Number.isNaN(numero)) {
+        alert("hai inserito un num sbagliato")
+
+        i--
+    }else {
+        myArray.push(numero);
+        somma = somma + myArray[i];
+    }
 }  
+
 console.log("La somma dei numeri è " + somma); 
 console.log("l'utente ha inserito i seguenti numeri: " + myArray.join(", "))
 
